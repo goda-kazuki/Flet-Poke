@@ -1,0 +1,40 @@
+[project]
+name = "flet-poke"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "goda-kazuki", email = "kazuki.goda@serverworks.co.jp" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "flet>=0.28.3",
+    "requests>=2.32.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "flet-cli>=0.28.3",
+    "flet-desktop>=0.28.3",
+    "flet-web>=0.28.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.flet.android]
+split_per_abi = true
+permissions = []
+
+[tool.flet.app]
+module = "main"
+path   = "src"
+exclude_packages = ["watchdog", "webview_flutter_android"]
+web_renderer = "canvaskit"
+
+[tool.flet.flutter.pubspec.dependency_overrides]
+webview_flutter_android = "4.10.1"
