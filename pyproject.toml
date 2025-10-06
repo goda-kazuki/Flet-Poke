@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.10"
 dependencies = [
     "flet>=0.28.3",
+    "httpx>=0.28.1",
     "requests>=2.32.5",
 ]
 
@@ -38,3 +39,9 @@ web_renderer = "canvaskit"
 
 [tool.flet.flutter.pubspec.dependency_overrides]
 webview_flutter_android = "4.10.1"
+
+[tool.mypy]
+# flet モジュールの型チェックを無視
+[[tool.mypy.overrides]]
+module = "flet.*"
+ignore_missing_imports = true

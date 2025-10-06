@@ -48,4 +48,8 @@ adb install build/apk/app-arm64-v8a-release.apk
 
 ```
 cd src && uv run flet build web --module-name main
+
+uv run flet build web
+
+python -m http.server --directory build/web
 ```

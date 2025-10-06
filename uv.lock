@@ -253,6 +253,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "flet" },
+    { name = "httpx" },
     { name = "requests" },
 ]
 
@@ -269,6 +270,7 @@ requires-dist = [
     { name = "flet-cli", marker = "extra == 'dev'", specifier = ">=0.28.3" },
     { name = "flet-desktop", marker = "extra == 'dev'", specifier = ">=0.28.3" },
     { name = "flet-web", marker = "extra == 'dev'", specifier = ">=0.28.3" },
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "requests", specifier = ">=2.32.5" },
 ]
 provides-extras = ["dev"]
